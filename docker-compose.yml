@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  my-app:
+    image: my-app
+    mem_swappiness: 0
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xmx128m -Xms128m -XX:+AlwaysPreTouch
